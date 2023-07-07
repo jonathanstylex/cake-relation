@@ -15,7 +15,7 @@ class CreateCoursesTable extends AbstractMigration
     public function change(): void
     {
         $users = $this->table('courses');    
-       ->addColumn('name', 'string', ['limit' => 30])       
+        $users->addColumn('name', 'string', ['limit' => 30])       
        ->addColumn('price_id', 'integer')       
        ->create();
     }

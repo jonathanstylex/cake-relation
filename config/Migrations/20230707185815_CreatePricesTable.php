@@ -14,8 +14,8 @@ class CreatePricesTable extends AbstractMigration
      */
     public function change(): void
     {
-       $users = $this->table('prices');           
-       ->addColumn('price', 'integer')       
-       ->create();
-   }
+     $users = $this->table('prices');           
+     $users->addColumn('price', 'integer')       
+     ->create();
+ }
 }

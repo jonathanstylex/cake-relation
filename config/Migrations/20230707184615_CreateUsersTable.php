@@ -15,25 +15,16 @@ class CreateUsersTable extends AbstractMigration
     public function change(): void
     {
 
-       $users = $this->table('users');
-       // $users->addColumn('username', 'string', ['limit' => 20])
-       ->addColumn('img', 'string', ['limit' => 30])
-       ->addColumn('email', 'string', ['limit' => 100])
-       ->addColumn('password', 'string', ['limit' => 100])
-       ->addColumn('password_salt', 'string', ['limit' => 100])
-       ->addColumn('token', 'string', ['limit' => 100])
-       ->addColumn('role_id', 'integer')
-       ->addColumn('statu_id', 'integer')
-       ->addColumn('is_buyer', 'integer')
-
-       // ->addColumn('email', 'string', ['limit' => 100])
-       // ->addColumn('first_name', 'string', ['limit' => 30])
-       // ->addColumn('last_name', 'string', ['limit' => 30])
-       // ->addColumn('role', 'integer')
-       // ->addColumn('created', 'datetime')
-       // ->addColumn('updated', 'datetime', ['null' => true])
-       // ->addIndex(['username', 'email'], ['unique' => true])
-       ->addIndex( 'email', ['unique' => true])
-       ->create();
-   }
+     $users = $this->table('users');     
+     $users->addColumn('img', 'string', ['limit' => 30])
+     ->addColumn('email', 'string', ['limit' => 100])
+     ->addColumn('password', 'string', ['limit' => 100])
+     ->addColumn('password_salt', 'string', ['limit' => 100])
+     ->addColumn('token', 'string', ['limit' => 100])
+     ->addColumn('role_id', 'integer')
+     ->addColumn('statu_id', 'integer')
+     ->addColumn('is_buyer', 'integer')
+     ->addIndex('email', ['unique' => true])
+     ->create();
+ }
 }

@@ -14,9 +14,9 @@ class CreateUsersCoursesTable extends AbstractMigration
      */
     public function change(): void
     {
-       $users = $this->table('users_courses');     
-       ->addColumn('user_id', 'integer')
-       ->addColumn('course_id', 'integer')
-       ->create();
-   }
+     $users = $this->table('users_courses');     
+     $users->addColumn('user_id', 'integer')
+     ->addColumn('course_id', 'integer')
+     ->create();
+ }
 }

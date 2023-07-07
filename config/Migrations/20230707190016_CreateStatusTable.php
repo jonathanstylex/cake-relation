@@ -15,7 +15,7 @@ class CreateStatusTable extends AbstractMigration
     public function change(): void
     {
         $users = $this->table('status');   
-       ->addColumn('statu', 'string', ['limit' => 30])       
+        $users->addColumn('statu', 'string', ['limit' => 30])       
        ->create();
     }
 }

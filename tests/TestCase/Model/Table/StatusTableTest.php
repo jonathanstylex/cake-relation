@@ -25,6 +25,7 @@ class StatusTableTest extends TestCase
      */
     protected $fixtures = [
         'app.Status',
+        'app.Users',
     ];
 
     /**

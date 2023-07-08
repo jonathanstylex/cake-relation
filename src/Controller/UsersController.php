@@ -18,7 +18,7 @@ class UsersController extends AppController
      */
     public function index()
     {
-       
+
         $data = $this->Users;
 
          // print_r($data);
@@ -58,6 +58,9 @@ class UsersController extends AppController
         $user = $this->Users->newEmptyEntity();
         if ($this->request->is('post')) {
             $user = $this->Users->patchEntity($user, $this->request->getData());
+
+            // print_r($user);
+
             if ($this->Users->save($user)) {
                 $this->Flash->success(__('The user has been saved.'));
 
@@ -67,7 +70,12 @@ class UsersController extends AppController
         }
         $roles = $this->Users->Roles->find('list', ['limit' => 200])->all();
         $courses = $this->Users->Courses->find('list', ['limit' => 200])->all();
-        $this->set(compact('user', 'roles', 'courses'));
+
+        // agrego esto para pasarlo como opciones en el select
+        $status = $this->Users->Status->find('list', ['limit' => 200])->all();
+        // $this->set(compact('user', 'roles', 'courses'));
+
+          $this->set(compact('user', 'roles', 'courses', 'status'));
     }
 
     /**

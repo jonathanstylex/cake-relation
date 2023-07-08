@@ -16,6 +16,9 @@
     <div class="column-responsive column-80">
         <div class="users form content">
             <?= $this->Form->create($user) ?>
+            <!-- <?php
+            //print_r($user); 
+            ?> -->
             <fieldset>
                 <legend><?= __('Add User') ?></legend>
                 <?php
@@ -26,6 +29,7 @@
                     echo $this->Form->control('token');
                     echo $this->Form->control('role_id', ['options' => $roles]);
                     // echo $this->Form->control('statu_id');
+                    echo $this->Form->control('statu_id',['options' => $status]);
                     echo $this->Form->control('is_buyer');
                     echo $this->Form->control('courses._ids', ['options' => $courses]);
                 ?>

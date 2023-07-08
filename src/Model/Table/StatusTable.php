@@ -41,9 +41,8 @@ class StatusTable extends Table
         $this->setDisplayField('id');
         $this->setPrimaryKey('id');
 
-
-        // agrege esto no reconoce la palabras status
-        $this->hasMany('Users', [
+        // con esto se arregla la asociacion
+         $this->hasMany('Users', [
             'foreignKey' => 'statu_id',
         ]);
     }

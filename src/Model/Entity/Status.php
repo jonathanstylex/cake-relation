@@ -10,6 +10,8 @@ use Cake\ORM\Entity;
  *
  * @property int $id
  * @property string $statu
+ *
+ * @property \App\Model\Entity\User[] $users
  */
 class Status extends Entity
 {
@@ -24,5 +26,6 @@ class Status extends Entity
      */
     protected $_accessible = [
         'statu' => true,
+        'users' => true,
     ];
 }

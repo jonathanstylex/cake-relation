@@ -48,6 +48,12 @@ class UsersTable extends Table
             'foreignKey' => 'role_id',
             'joinType' => 'INNER',
         ]);
+
+         $this->belongsTo('Status', [
+            'foreignKey' => 'statu_id',
+            'joinType' => 'INNER',
+        ]);
+
         $this->belongsToMany('Courses', [
             'foreignKey' => 'user_id',
             'targetForeignKey' => 'course_id',
